@@ -25,7 +25,7 @@ const YorumFormu = (props) => {
                     <input name="display_name" type="text" placeholder="Adınız" onChange={handleOnChange} value={yorum.display_name} />
                 </div>
                 <textarea name="body" placeholder="Yorumunuz" rows="3" onChange={handleOnChange} value={yorum.body}></textarea>
-                <button className="ui blue button" type="submit">Yorum Gönder</button>
+                <button className="ui blue button" type="submit">Yorum Gönder.</button>
             </form>
         </React.Fragment>
     );
