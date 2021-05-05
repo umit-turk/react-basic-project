@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import axios from "axios";
-
+import {api} from '../api';
 const YaziDetayi = (props) => {
    const {id} = props.match.params; //aynı isimle bir objenin değeri varsa onu destructure yapabiliriz.
    const [yaziDetayi, setyaziDetayi] = useState({});
 
     useEffect(()=> {
-        axios.get(`https://react-yazi-yorum.herokuapp.com/posts/${id}`)
+        api().get(`/posts/${id}`)
         .then(response => {
             setyaziDetayi(response.data)
             console.log(response)

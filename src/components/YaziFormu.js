@@ -1,6 +1,6 @@
-import axios from 'axios';
 import React, { useState } from 'react'
 import { withRouter } from 'react-router-dom' // YaziFormu App.js de olmadığı için history'e ulaşmak için import ediyoruz
+import { api } from '../api';
 
 
 const YaziFormu = (props) => {
@@ -12,7 +12,7 @@ const YaziFormu = (props) => {
     const onFormSubmit = (event) => {
         event.preventDefault();
         setHata("");
-        axios.post('https://react-yazi-yorum.herokuapp.com/posts', yazi) //ikinci parametre olarak yazi objesini giriyoruz
+        api().post('/posts', yazi) //ikinci parametre olarak yazi objesini giriyoruz
             .then(response => {
                 props.history.push('/'); //yazımız başarılı bir şekilde yüklendiğinde anasayfaya yönlendiriyoruz.
             })
