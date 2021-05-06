@@ -43,7 +43,7 @@ const YaziFormu = (props) => {
     };
 
     useEffect(() => {
-        if(props.yazi.title && props.yazi.content) setYazi(props.yazi) //props.yazi? anlamaı props.yazi yoksa devamına bakmıyor.
+        if(props.yazi?.title && props.yazi?.content)  setYazi(props.yazi) //props.yazi? anlamaı props.yazi yoksa devamına bakmıyor.
     }, [props.yazi])//eğer props dan gelen yazı değişirse useEffect çalışacak.
 
     return (
